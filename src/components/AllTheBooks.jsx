@@ -2,6 +2,10 @@ import { Component } from "react";
 import { Container, Row, Col, Card, Button, } from "react-bootstrap";
 
 import fantasy from '../books/fantasy.json';
+import history from '../books/history.json';
+import horror from '../books/horror.json';
+import romance from '../books/romance.json';
+import scifi from '../books/scifi.json';
 
 class AllTheBooks extends Component {
 
