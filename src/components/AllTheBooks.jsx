@@ -11,7 +11,7 @@ class AllTheBooks extends Component {
                 <Row>
                     {fantasy.map((book) => (
                         <Col md={4}>
-                            <Card style={{ width: '18rem',}}>
+                            <Card>
                                 <Card.Img className="img-fluid object-fit-cover w-100" variant="top" src={book.img} style={{ height: '200px'}}/>
                                 <Card.Body>
                                     <Card.Title className="text-truncate">{book.title}</Card.Title>
