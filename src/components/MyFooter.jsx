@@ -2,9 +2,9 @@ import {Container} from "react-bootstrap";
 
 const MyFooter = props => (
 
-    <footer>
+    <footer className="bg-dark text-white py-3">
         <Container fluid>
-            <p>{props.footerContent}</p>
+            <p className="m-auto">{props.footerContent}</p>
         </Container>
     </footer>
 );

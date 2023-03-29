@@ -7,16 +7,29 @@ import horror from '../books/horror.json';
 import romance from '../books/romance.json';
 import scifi from '../books/scifi.json';
 
-class AllTheBooks extends Component {
+const allBooks = [...fantasy, ...history, ...horror, ...romance, ...scifi];
 
+const getRandomBooks = () => {
+    const randomBooks = [];
+    while (randomBooks.length < 24) {
+        const randomIndex = Math.floor(Math.random() * allBooks.length);
+        const randomBook = allBooks[randomIndex];
+        if (!randomBooks.includes(randomBook)) {
+            randomBooks.push(randomBook);
+        }
+    }
+    return randomBooks;
+};
+
+class AllTheBooks extends Component {
     render() {
         return (
             <Container fluid>
                 <Row>
-                    {fantasy.map((book,index) => (
-                        <Col md={4}  key={`book-${index}`}>
-                            <Card>
-                                <Card.Img className="img-fluid object-fit-cover w-100" variant="top" src={book.img} style={{ height: '200px'}}/>
+                    {getRandomBooks().map((book, index) => (
+                        <Col md={4} key={`book-${index}`}>
+                            <Card className="my-3">
+                                <Card.Img className="img-fluid object-fit-cover w-100" variant="top" src={book.img} style={{ height: '200px' }} />
                                 <Card.Body>
                                     <Card.Title className="text-truncate">{book.title}</Card.Title>
                                     <Card.Text>
