@@ -9,8 +9,8 @@ class AllTheBooks extends Component {
         return (
             <Container fluid>
                 <Row>
-                    {fantasy.map((book) => (
-                        <Col md={4}>
+                    {fantasy.map((book,index) => (
+                        <Col md={4}  key={`book-${index}`}>
                             <Card>
                                 <Card.Img className="img-fluid object-fit-cover w-100" variant="top" src={book.img} style={{ height: '200px'}}/>
                                 <Card.Body>
