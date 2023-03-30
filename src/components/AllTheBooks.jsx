@@ -22,12 +22,22 @@ const getRandomBooks = () => {
 };
 
 class AllTheBooks extends Component {
+    state = {
+        selectedBook: null
+    };
     render() {
         return (
             <Container fluid>
                 <Row>
                     {getRandomBooks().map((book, index) => (
-                        <Col md={4} key={`book-${index}`}>
+                        <Col md={4}
+                            key={`book-${index}`}
+                            onClick={() => {
+                                console.log("abbiamo cliccato: " + book.title);
+
+                                this.setState({ selectedBook: book });
+                            }}
+                        >
                             <Card className="my-3">
                                 <Card.Img className="img-fluid object-fit-cover w-100" variant="top" src={book.img} style={{ height: '200px' }} />
                                 <Card.Body>
